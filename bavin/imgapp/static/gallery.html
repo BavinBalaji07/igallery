@@ -1,91 +1,37 @@
 
 
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8" />
-<title>My Image Gallery</title>
-<style>
-  body { font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, sans-serif; background: #f7f7f7; margin: 0; padding: 0; text-align: center; }
-  .gallery { display: flex; justify-content: center; gap: 20px; margin-top: 40px; }
-  .gallery2 { display: flex; justify-content: center; gap: 20px; margin-top: 40px; }
-  .gallery3 { display: flex; justify-content: center; gap: 20px; margin-top: 40px; }
-
-  .thumbnail { width:150px; height: 150px; object-fit: cover; border-radius: 10px; cursor: pointer; box-shadow: 0 2px 8px #bbb; transition: transform 0.2s; }
-  .thumbnail:hover { transform: scale(1.05); }
-  .credit { margin: 40px 0 10px 0; color: #444; font-size: 1rem; }
-  .designer { font-weight: bold; letter-spacing: 1px; }
-
-  /* Modal (overlay) styles */
-  .modal { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(30, 30, 30, 0.8); justify-content: center; align-items: center; z-index: 1000; }
-  .modal.active { display: flex; }
-  .modal-content { background: #fffbea; padding: 30px; border-radius: 14px; box-shadow: 0 4px 40px #222; animation: pop 0.38s cubic-bezier(0.53, 1.7, 0.34, 0.64); position: relative;}
-  .modal-image { width: 320px; height: auto; border-radius: 10px; }
-  .close { position: absolute; top: 10px; right: 18px; font-size: 30px; color: #333; cursor: pointer; font-weight: bold; }
-
-  @keyframes pop {
-    0% { transform: scale(0.8);}
-    75% {transform: scale(1.1);}
-    100% { transform: scale(1);}
-  }
-</style>
+    <meta charset="UTF-8">
+    <title>Uchiha Gallery</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="gallery">
-    <img src="madara.jpg" class="thumbnail" alt="1"/>
-    <img src="itachi uchiha.jpeg" class="thumbnail" alt="2"/>
-    <img src="download (1).jpg" class="thumbnail" alt="3"/>
-  </div>
-  <br>
-   <div class="gallery2">
-    <img src="minato2 j.jpg" class="thumbnail" alt="1"/>
-    <img src="sas.jpeg" class="thumbnail" alt="2"/>
-    <img src="gaara.jpeg" class="thumbnail" alt="3"/>
-  </div>
-  <br>
-   <div class="gallery3">
-    <img src="stan (2).jpeg" class="thumbnail" alt="1"/>
-    <img src="stan3.jpeg" class="thumbnail" alt="2"/>
-    <img src="stan4.jpeg" class="thumbnail" alt="3"/>
-  </div>
+    <div class="box">
+        <h1 class="heading">The Goated characters</h1>
+        <p class="small-text">Madara · Obito · Itachi · Sasuke  </p>
 
-  <div class="credit">©Designed by:<br/><span class="designer">Bavin Balaji R</span></div>
+        <div class="image-area">
+            <img src="madara.jpg" id="photo" alt="universe picture">
 
-  <!-- Modal overlay -->
-  <div class="modal" id="modal">
-    <div class="modal-content">
-      <span class="close" id="closeBtn">&times;</span>
-      <img id="modalImg" class="modal-image" src="" alt="Large View"/>
+            <p class="title" id="title-text">Madara Uchiha</p>
+            <p class="info" id="info-text">
+                Ghost of the Uchihas
+            </p>
+        </div>
+
+        <div class="buttons">
+            <button onclick="prev()">Previous</button>
+            <button onclick="next()">Next</button>
+        </div>
+
+        <p class="count" id="count-text">1 / 6</p>
     </div>
-  </div>
 
-  <script>
-  const thumbnails = document.querySelectorAll('.thumbnail');
-  const modal = document.getElementById('modal');
-  const modalImg = document.getElementById('modalImg');
-  const closeBtn = document.getElementById('closeBtn');
+    <footer class="footer">
+        &copy; Bavin Balaji R
+    </footer>
 
-  thumbnails.forEach(img => {
-    img.addEventListener('click', () => {
-      modalImg.src = img.src;
-      modal.classList.add('active');
-    });
-  });
-
-  closeBtn.onclick = function() {
-    modal.classList.remove('active');
-    modalImg.src = '';
-  };
-
-  // Optional: close modal when clicking the overlay
-  modal.onclick = function(e) {
-    if(e.target === modal) {
-      modal.classList.remove('active');
-      modalImg.src = '';
-    }
-  }
-  </script>
+    <script src="text.js"></script>
 </body>
 </html>
-
-
