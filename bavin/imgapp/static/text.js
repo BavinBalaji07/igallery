@@ -21,6 +21,11 @@ var pics = [
         title: "Sasuke Uchiha",
         info: "The last of the Uchihas."
     },
+    {
+      image: "minatooo.jpeg",
+        title: "Minato Namikaze",
+        info: "The Yellow Flash of Leaf"
+    }
 ];
 
 var i = 0; 

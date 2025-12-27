@@ -168,7 +168,11 @@ var pics = [
         title: "Sasuke Uchiha",
         info: "The last of the Uchihas."
     },
-    
+    {
+      image: "minatooo.jpeg",
+        title: "Minato Namikaze",
+        info: "The Yellow Flash of Leaf"
+    }
 ];
 
 var i = 0; 
@@ -212,6 +216,6 @@ show();
 ![alt text](bavin/imgapp/static/2.png)
 ![alt text](bavin/imgapp/static/3.png)
 ![alt text](bavin/imgapp/static/4.png)
-
+![alt text](bavin/imgapp/static/5.png)
 ## RESULT:
 The program for designing an interactive image gallery using HTML, CSS and JavaScript is executed successfully.
